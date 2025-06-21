@@ -5,3 +5,4 @@ dist/
 module.json
 node_modules/
 symlinks/
+.vscode
