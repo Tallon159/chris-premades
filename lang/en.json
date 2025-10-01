@@ -240,6 +240,7 @@
             "TurnTrigger": "Turn Trigger:",
             "UseFormula": "Use Formula:",
             "WeaponProperties": "Weapon Properties:",
+            "WeaponType": "Weapon Type",
             "cameraZoom": "Camera Zoom:"
         },
         "Cover": {
@@ -662,6 +663,7 @@
             "Submit": "Submit",
             "Success": "Success",
             "Summon": "Summon",
+            "Target": "Select Target",
             "Total": "Total",
             "TurnEnd": "Turn End",
             "TurnStart": "Turn Start",
@@ -1938,6 +1940,9 @@
             "ShadowStep": {
                 "Name": "Shadow Step"
             },
+            "ShadowyDodge": {
+                "Use": "Use {item}?"
+            },
             "ShareSpells": {
                 "Confirm": "Share {spell} with {name}?"
             },
@@ -2030,6 +2035,12 @@
             },
             "StaggeringSmite": {
                 "Stagger": "Staggering Smite: Stagger"
+            },
+            "StalkersFlurry": {
+                "IncludeSelf": "Mass Fear: Include self?",
+                "MassFear": "Mass Fear",
+                "SuddenStrike": "Sudden Strike",
+                "Use": "Use {item}?"
             },
             "StarryForm": {
                 "Archer": "Archer",
