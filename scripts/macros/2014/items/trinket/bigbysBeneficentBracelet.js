@@ -51,7 +51,7 @@ async function late({workflow}) {
         genericUtils.setProperty(updates, 'token.texture.scaleY', 0.5);
     }
     await Summons.spawn(sourceActor, updates, workflow.item, workflow.token, {
-        range: 10,
+        range: genericUtils.convertDistance(10),
         animation: itemUtils.getConfig(workflow.item, 'playAnimation') ? 'earth' : 'none',
         initiativeType: 'none',
         duration: 28800

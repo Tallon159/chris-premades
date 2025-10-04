@@ -35,7 +35,7 @@ async function use({workflow}) {
         genericUtils.setProperty(updates, 'token.texture.src', tokenImg);
     }
     await Summons.spawn(sourceActor, updates, workflow.item, workflow.token, {
-        range: 30,
+        range: genericUtils.convertDistance(30),
         initiativeType: 'none',
         customIdentifier: 'dancingSword',
         additionalVaeButtons: [{

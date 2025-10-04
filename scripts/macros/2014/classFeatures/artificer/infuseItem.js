@@ -728,7 +728,7 @@ async function homunculusHelper(workflow) {
     }
     let animation = itemUtils.getConfig(workflow.item, 'animation') ?? 'none';
     await Summons.spawn(sourceActor, updates, workflow.item, workflow.token, {
-        range: 5,
+        range: genericUtils.convertDistance(5),
         animation,
         initiativeType: 'follows',
         additionalVaeButtons: [{type: 'use', name: commandData.name, identifier: 'homunculusServantCommand'}, {type: 'use', name: channelMagicData.name, identifier: 'homunculusServantChannelMagic'}],

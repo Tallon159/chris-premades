@@ -266,7 +266,7 @@ async function intangibleSpirit({workflow}) {
     }
     let spawnedTokens = await Summons.spawn(sourceActor, updates, workflow.item, workflow.token, {
         duration: 7,
-        range: 30,
+        range: genericUtils.convertDistance(30),
         initiativeType: 'none',
         customIdentifier: 'wildSurgeIntangibleSpirit'
     });

@@ -31,7 +31,7 @@ async function use({workflow}) {
     if (!feature) return;
     await Summons.spawn(sourceActors, updates, workflow.item, workflow.token, {
         duration: 86400, 
-        range: 10, 
+        range: genericUtils.convertDistance(10), 
         animation, 
         additionalVaeButtons: [{
             type: 'use', 

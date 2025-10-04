@@ -71,7 +71,7 @@ export async function findSteedHelper(workflow, defaultNameSuffix, defaultFolder
     let animation = itemUtils.getConfig(workflow.item, creatureType + 'Animation') ?? 'none';
     await Summons.spawn(sourceActor, updates, workflow.item, workflow.token, {
         duration: 86400, 
-        range: 30, 
+        range: genericUtils.convertDistance(30), 
         animation, 
         dismissActivity: feature,
         unhideActivities: {

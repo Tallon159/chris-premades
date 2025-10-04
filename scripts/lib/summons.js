@@ -212,7 +212,7 @@ export class Summons {
         crosshairsConfig.direction += rotation;
         const templateData = await crosshairUtils.aimCrosshair({
             token: this.summonerToken, 
-            maxRange: genericUtils.convertDistance(this.options.range),
+            maxRange: this.options.range,
             crosshairsConfig,
             drawBoundries: false,
             customCallbacks: this.options.callbacks

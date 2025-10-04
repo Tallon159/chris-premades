@@ -67,7 +67,7 @@ async function use({trigger, workflow}) {
     if (!feature) return;
     let [token] = await Summons.spawn(actor, updates, workflow.item, workflow.token,{
         duration: itemUtils.convertDuration(workflow.item).seconds,
-        range: 60,
+        range: genericUtils.convertDistance(60),
         animation,
         initiativeType: 'none',
         additionalVaeButtons: [{

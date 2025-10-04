@@ -56,7 +56,7 @@ async function use({workflow}) {
     };
     await Summons.spawn(sourceActors, updates, workflow.item, workflow.token, {
         duration: 3600,
-        range: 60,
+        range: genericUtils.convertDistance(60),
         animation,
         initiativeType: 'group'
     });

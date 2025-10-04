@@ -85,7 +85,7 @@ async function use({workflow}) {
     let commandFeature = activityUtils.getActivityByIdentifier(workflow.item, 'steelDefenderCommand', {strict: true});
     if (!commandFeature) return;
     await Summons.spawn(sourceActor, updates, workflow.item, workflow.token, {
-        range: 10,
+        range: genericUtils.convertDistance(10),
         animation,
         initiativeType: 'follows',
         additionalVaeButtons: [{

@@ -87,7 +87,7 @@ async function use({workflow}) {
     let commandFeature = activityUtils.getActivityByIdentifier(workflow.item, 'animatingPerformanceCommand', {strict: true});
     if (!commandFeature) return;
     await Summons.spawn(sourceActor, updates, workflow.item, workflow.token, {
-        range: 30,
+        range: genericUtils.convertDistance(30),
         duration: 3600,
         animation,
         initiativeType: 'follows',

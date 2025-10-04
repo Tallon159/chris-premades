@@ -129,7 +129,7 @@ async function use({workflow}) {
     }
     let animation = itemUtils.getConfig(workflow.item, creatureType + 'Animation') ?? 'none';
     await Summons.spawn(sourceActor, updates, workflow.item, workflow.token, {
-        range: 10, 
+        range: genericUtils.convertDistance(10), 
         animation,
         additionalVaeButtons,
         unhideActivities
@@ -278,7 +278,7 @@ async function pocketDimension({workflow}) {
         }
         let spawnedTokens = await Summons.spawn(sourceActor, updates, findFamiliarItem, workflow.token, {
             duration: 864000, 
-            range: 30, 
+            range: genericUtils.convertDistance(30), 
             animation: pocketFlags.animation
         });
         if (!spawnedTokens?.length) return;

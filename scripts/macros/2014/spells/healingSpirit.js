@@ -49,7 +49,7 @@ async function use({workflow}) {
     }
     let spawnedTokens = await Summons.spawn(sourceActor, updates, workflow.item, workflow.token, {
         duration: 60, 
-        range: 60, 
+        range: genericUtils.convertDistance(60), 
         animation: 'none',
         initiativeType: 'none', 
         additionalVaeButtons: [{type: 'use', name: feature.name, identifier: 'healingSpirit', activityIdentifier: 'healingSpiritMove'}], 

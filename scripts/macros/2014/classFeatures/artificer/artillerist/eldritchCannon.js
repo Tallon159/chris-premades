@@ -132,7 +132,7 @@ async function use({workflow}) {
     let dismissFeature = activityUtils.getActivityByIdentifier(workflow.item, 'eldritchCannonDismiss', {strict: true});
     if (!dismissFeature) return;
     await Summons.spawn(sourceActors, updates, workflow.item, workflow.token, {
-        range: 5,
+        range: genericUtils.convertDistance(5),
         animation,
         initiativeType: 'follows',
         dismissActivity: dismissFeature,

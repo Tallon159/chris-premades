@@ -29,7 +29,7 @@ async function use({workflow}) {
     };
     await Summons.spawn(sourceActor, updates, workflow.item, workflow.token, {
         duration: 3600,
-        range: 90,
+        range: genericUtils.convertDistance(90),
         animation,
         concentrationNonDependent: true,
         onDeleteMacros: ['summonTurnHostile']

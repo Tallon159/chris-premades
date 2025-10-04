@@ -96,7 +96,7 @@ async function use({workflow}) {
     if (!feature) return;
     let summonedTokens = await Summons.spawn(sourceActor, updates, workflow.item, workflow.token, {
         duration: itemUtils.convertDuration(workflow.item).seconds, 
-        range: 60, 
+        range: genericUtils.convertDistance(60), 
         animation, 
         initiativeType: 'none', 
         additionalVaeButtons: [{

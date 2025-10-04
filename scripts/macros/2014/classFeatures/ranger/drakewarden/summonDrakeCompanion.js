@@ -106,7 +106,7 @@ async function use({workflow}) {
     }
     let animation = itemUtils.getConfig(workflow.item, damageType + 'Animation') ?? 'none';
     await Summons.spawn(sourceActor, updates, workflow.item, workflow.token, {
-        range: 30,
+        range: genericUtils.convertDistance(30),
         animation,
         initiativeType: 'follows',
         additionalSummonVaeButtons: itemsToAdd.slice(2).map(i => ({type: 'use', name: i.name, identifier: i.flags['chris-premades'].info.identifier})),

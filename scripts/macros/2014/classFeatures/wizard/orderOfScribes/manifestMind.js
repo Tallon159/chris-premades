@@ -32,7 +32,7 @@ async function use({workflow}) {
     }
     let animation = itemUtils.getConfig(workflow.item, 'animation') ?? 'none';
     await Summons.spawn(sourceActor, updates, workflow.item, workflow.token, {
-        range: 60,
+        range: genericUtils.convertDistance(60),
         animation,
         initiativeType: 'none',
         dismissActivity: dismissFeature,

@@ -36,7 +36,7 @@ async function use({workflow}) {
     }
     await Summons.spawn(sourceActor, updates, workflow.item, workflow.token, {
         duration: 60,
-        range: 30,
+        range: genericUtils.convertDistance(30),
         animation,
         initiativeType: 'none',
         additionalVaeButtons: [{type: 'use', name: feature.name, identifier: 'maximiliansEarthenGrasp', activityIdentifier: 'maximiliansEarthenGraspGrasp'}],

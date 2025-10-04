@@ -61,7 +61,7 @@ async function use({trigger, workflow}) {
     };
     let tokens = await Summons.spawn(actor, updates, workflow.item, workflow.token, {
         duration: duration,
-        range: 1000,
+        range: genericUtils.convertDistance(1000),
         animation: animation,
         initiativeType: initiative
     });

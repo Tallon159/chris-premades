@@ -55,7 +55,7 @@ async function use({workflow}) {
     }
     let animation = itemUtils.getConfig(workflow.item, 'animation') ?? 'none';
     let spawnedTokens = await Summons.spawn(sourceActor, updates, workflow.item, workflow.token, {
-        range: 30,
+        range: genericUtils.convertDistance(30),
         animation,
         initiativeType: 'follows',
         additionalVaeButtons: [{

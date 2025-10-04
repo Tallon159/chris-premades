@@ -76,7 +76,7 @@ async function use({workflow}) {
     let unleashIncarnation = itemUtils.getItemByIdentifier(workflow.actor, 'unleashIncarnation');
     if (unleashIncarnation) vaeButtons.push({type: 'use', name: unleashIncarnation.name, identifier: 'unleashIncarnation'});
     let spawnedTokens = await Summons.spawn(makeTwo ? [sourceActor, sourceActor] : sourceActor, updates, workflow.item, workflow.token, {
-        range: 15,
+        range: genericUtils.convertDistance(15),
         animation,
         initiativeType: 'follows',
         dismissActivity: dismissFeature,

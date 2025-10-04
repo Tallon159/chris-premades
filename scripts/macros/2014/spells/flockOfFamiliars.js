@@ -153,7 +153,7 @@ async function use({workflow}) {
     let animation = itemUtils.getConfig(workflow.item, creatureType + 'Animation') ?? 'none';
     await Summons.spawn(sourceActors, updates, workflow.item, workflow.token, {
         duration: 864000, 
-        range: 10, 
+        range: genericUtils.convertDistance(10), 
         animation,
         additionalVaeButtons,
         unhideActivities

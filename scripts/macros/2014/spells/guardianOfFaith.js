@@ -40,7 +40,7 @@ async function use({workflow}) {
     let animation = itemUtils.getConfig(workflow.item, 'animation') ?? 'celestial';
     let spawnedTokens = await Summons.spawn(sourceActor, updates, workflow.item, workflow.token, {
         duration: 28800,
-        range: 30,
+        range: genericUtils.convertDistance(30),
         animation,
         initiativeType: 'none'
     });

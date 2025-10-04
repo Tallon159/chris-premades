@@ -175,7 +175,7 @@ async function use({workflow}) {
     let animation = itemUtils.getConfig(workflow.item, creatureType + 'Animation') ?? 'none';
     let identifiersToVae = ['primalCompanionDodge', 'primalCompanionBeastsStrikeLand', 'primalCompanionBeastsStrikeSea', 'primalCompanionBeastsStrikeSky'];
     await Summons.spawn(sourceActor, updates, workflow.item, workflow.token, {
-        range: 10,
+        range: genericUtils.convertDistance(10),
         animation,
         initiativeType: 'follows',
         additionalSummonVaeButtons: 
