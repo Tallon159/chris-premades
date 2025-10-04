@@ -744,7 +744,8 @@ export class ItemMedkit extends HandlebarsApplicationMixin(ApplicationV2) {
             'system.preparation',
             'system.quantity',
             'system.sourceClass',
-            'system.source'
+            'system.source',
+            'system.requirements'
         ];
         const cleanPaths = [
             'flags.midi-qol.onUseMacroName',
