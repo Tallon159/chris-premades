@@ -636,6 +636,17 @@ export class ItemMedkit extends HandlebarsApplicationMixin(ApplicationV2) {
                 }
             },
             {
+                id: 'd20',
+                label: 'CHRISPREMADES.Medkit.Tabs.DevTools.D20',
+                value: JSON?.stringify(this.flags?.macros?.d20),
+                placeholder: '[&quot;macroNameOne&quot;, &quot;macroNameTwo&quot;]',
+                isText: true,
+                flag: {
+                    key: 'macros.d20',
+                    value: 'array'
+                }
+            },
+            {
                 id: 'equipment',
                 label: 'CHRISPREMADES.Medkit.Tabs.DevTools.Equipment',
                 value: this.flags?.equipment?.identifier,
@@ -722,7 +733,7 @@ export class ItemMedkit extends HandlebarsApplicationMixin(ApplicationV2) {
     static async update(item, sourceItem, {source, version, identifier} = {}, actorMedkit = false) {
         let itemData = genericUtils.duplicate(item.toObject());
         let sourceItemData = genericUtils.duplicate(sourceItem.toObject());
-        const keepPaths = [
+        let keepPaths = [
             '_stats.compendiumSource',
             'flags.chris-premades.config',
             'flags.custom-character-sheet-sections.sectionName',
@@ -741,12 +752,15 @@ export class ItemMedkit extends HandlebarsApplicationMixin(ApplicationV2) {
             'system.description.value',
             'system.equipped',
             'system.materials',
-            'system.preparation',
             'system.quantity',
             'system.sourceClass',
             'system.source',
+            'system.prepared',
+            'system.method',
+            'flags.core.sourceId',
             'system.requirements'
         ];
+        if (item.type === 'spell') keepPaths.push('system.uses');
         const cleanPaths = [
             'flags.midi-qol.onUseMacroName',
             'flags.chris-premades.macros'
@@ -905,7 +919,7 @@ export class ItemMedkit extends HandlebarsApplicationMixin(ApplicationV2) {
                         await this.item.setFlag('chris-premades', 'info.hasAnimation', this._macro.hasAnimation);
                     }
                     let updates = {};
-                    for (let i of ['check', 'save', 'aura', 'combat', 'item', 'death', 'effect', 'midi', 'movement', 'region', 'rest', 'skill', 'template', 'toolCheck']) {
+                    for (let i of ['check', 'save', 'aura', 'combat', 'item', 'death', 'effect', 'midi', 'movement', 'region', 'rest', 'skill', 'template', 'toolCheck', 'd20']) {
                         if (!this._macro[i]) continue;
                         if (i === 'midi') {
                             for (let j of ['item', 'actor']) {
