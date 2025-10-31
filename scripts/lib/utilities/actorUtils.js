@@ -116,7 +116,7 @@ async function setReactionUsed(actor) {
         return await socket.executeAsGM(sockets.setReactionUsed.name, actor.uuid);
     }
 }
-async function removeReactionUsed(actor, force=false) {
+async function removeReactionUsed(actor, force = false) {
     let hasPermission = socketUtils.hasPermission(actor, game.user.id);
     if (hasPermission) {
         return MidiQOL.removeReactionUsed(actor, force);
