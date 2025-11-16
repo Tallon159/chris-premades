@@ -262,6 +262,12 @@ function compareSize(source, target, goal) {
             return undefined;
     }
 }
+function getBestAbility(actor, abilities) {
+    return abilities.reduce((best, key) => {
+        if (!actor.system.abilities[key]) return best;
+        return actor.system.abilities[key].mod > actor.system.abilities[best].mod ? key : best;
+    });
+}
 export let actorUtils = {
     getEffects,
     addFavorites,
@@ -292,5 +298,6 @@ export let actorUtils = {
     getEquippedShield,
     getAllEquippedArmor,
     hasConditionBy,
-    compareSize
+    compareSize,
+    getBestAbility
 };
